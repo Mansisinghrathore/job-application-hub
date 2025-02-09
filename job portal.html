@@ -1,0 +1,354 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Job Application Hub
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+  <style>
+   body {
+      font-family: 'Roboto', sans-serif;
+    }
+    .hidden {
+      display: none;
+    }
+    .transition {
+      transition: all 0.3s ease-in-out;
+    }
+    .hover-scale:hover {
+      transform: scale(1.05);
+    }
+    .nav-item {
+      background-color: #3b82f6;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out;
+    }
+    .nav-item:hover {
+      background-color: #2563eb;
+    }
+  </style>
+  <script>
+   function showSection(sectionId) {
+      document.getElementById('jobs-section').classList.add('hidden');
+      document.getElementById('profile-section').classList.add('hidden');
+      document.getElementById('applied-jobs-section').classList.add('hidden');
+      document.getElementById(sectionId).classList.remove('hidden');
+    }
+
+    function applyForJob(jobTitle) {
+      const name = prompt("Enter your name:");
+      const email = prompt("Enter your email:");
+      const resume = prompt("Enter the link to your resume:");
+
+      if (name && email && resume) {
+        alert(`You have applied for the ${jobTitle} position.\nName: ${name}\nEmail: ${email}\nResume: ${resume}`);
+      } else {
+        alert("Application cancelled. Please provide all the required details.");
+      }
+    }
+  </script>
+ </head>
+ <body class="bg-gradient-to-r from-blue-100 to-purple-100">
+  <header class="bg-white shadow-md">
+   <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+    <h1 class="text-2xl font-bold text-blue-600">
+     Job Application Hub
+    </h1>
+    <nav>
+     <ul class="flex space-x-4">
+      <li class="nav-item" onclick="showSection('jobs-section')">
+       Jobs
+      </li>
+      <li class="nav-item" onclick="showSection('applied-jobs-section')">
+       Applied Jobs
+      </li>
+      <li class="nav-item" onclick="showSection('profile-section')">
+       Profile
+      </li>
+     </ul>
+    </nav>
+   </div>
+  </header>
+  <main class="container mx-auto px-4 py-8">
+   <section class="mb-8" id="jobs-section">
+    <h2 class="text-xl font-semibold mb-4 text-purple-600">
+     Explore Job Opportunities
+    </h2>
+    <div class="mb-4">
+     <label class="block text-gray-700 mb-2" for="filter">
+      Filter by:
+     </label>
+     <div class="flex flex-wrap gap-4">
+      <select class="w-full md:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="job-type">
+       <option value="">
+        Job Type
+       </option>
+       <option value="full-time">
+        Full Time
+       </option>
+       <option value="part-time">
+        Part Time
+       </option>
+       <option value="internship">
+        Internship
+       </option>
+       <option value="remote">
+        Remote
+       </option>
+       <option value="hybrid">
+        Hybrid
+       </option>
+      </select>
+      <select class="w-full md:w-auto px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="salary-range">
+       <option value="">
+        Salary Range
+       </option>
+       <option value="0-50k">
+        $0 - $50k
+       </option>
+       <option value="50k-100k">
+        $50k - $100k
+       </option>
+       <option value="100k-150k">
+        $100k - $150k
+       </option>
+       <option value="150k+">
+        $150k+
+       </option>
+      </select>
+     </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 1" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/xn7Ppz5wPxUgztyYt4KS_yHTPv_F6OmZ3O2sA-ltY2s.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       Frontend Developer
+      </h3>
+      <p class="text-gray-600">
+       Epicred
+      </p>
+      <p class="text-gray-600">
+       Location: Remote
+      </p>
+      <p class="text-gray-600">
+       Salary: $80k - $120k
+      </p>
+      <p class="text-gray-600">
+       Type: Full Time
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('Frontend Developer')">
+       Apply Now
+      </button>
+     </div>
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 2" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/DZP-61ybDIXYlPUKyR8XhOe__tB-er1B87oKT3gmXzU.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       Backend Developer
+      </h3>
+      <p class="text-gray-600">
+       TechCorp
+      </p>
+      <p class="text-gray-600">
+       Location: New York, NY
+      </p>
+      <p class="text-gray-600">
+       Salary: $90k - $130k
+      </p>
+      <p class="text-gray-600">
+       Type: Full Time
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('Backend Developer')">
+       Apply Now
+      </button>
+     </div>
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 3" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/vko53awP8xjPy_yO-8ktjRTHw2t-vZH8iMWbi-BpRfI.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       Full Stack Developer
+      </h3>
+      <p class="text-gray-600">
+       Innovatech
+      </p>
+      <p class="text-gray-600">
+       Location: San Francisco, CA
+      </p>
+      <p class="text-gray-600">
+       Salary: $100k - $150k
+      </p>
+      <p class="text-gray-600">
+       Type: Hybrid
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('Full Stack Developer')">
+       Apply Now
+      </button>
+     </div>
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 4" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/dWSWO9VdrlRNWJKdQkp3DJoeV4ro6QvDz4PNA75YITo.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       Data Scientist
+      </h3>
+      <p class="text-gray-600">
+       DataWorks
+      </p>
+      <p class="text-gray-600">
+       Location: Boston, MA
+      </p>
+      <p class="text-gray-600">
+       Salary: $110k - $160k
+      </p>
+      <p class="text-gray-600">
+       Type: Full Time
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('Data Scientist')">
+       Apply Now
+      </button>
+     </div>
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 5" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/CiYQNEGk-fTvIOh-LJpXM7wFr4gKEAC2LrmToUjdeGk.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       UI/UX Designer
+      </h3>
+      <p class="text-gray-600">
+       DesignPro
+      </p>
+      <p class="text-gray-600">
+       Location: Austin, TX
+      </p>
+      <p class="text-gray-600">
+       Salary: $70k - $100k
+      </p>
+      <p class="text-gray-600">
+       Type: Part Time
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('UI/UX Designer')">
+       Apply Now
+      </button>
+     </div>
+     <div class="bg-white p-4 rounded-lg shadow-md hover-scale transition">
+      <img alt="Company logo and job title for job posting 6" class="w-full h-40 object-cover rounded-t-lg" height="400" src="https://storage.googleapis.com/a1aa/image/ox8nCchLt7FXQxvcK49z3c2pxmeEMM4jiiK1I7pZLdc.jpg" width="600"/>
+      <h3 class="text-lg font-semibold mt-4 text-blue-600">
+       Product Manager
+      </h3>
+      <p class="text-gray-600">
+       ProdManage
+      </p>
+      <p class="text-gray-600">
+       Location: Seattle, WA
+      </p>
+      <p class="text-gray-600">
+       Salary: $120k - $170k
+      </p>
+      <p class="text-gray-600">
+       Type: Remote
+      </p>
+      <button class="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" onclick="applyForJob('Product Manager')">
+       Apply Now
+      </button>
+     </div>
+    </div>
+   </section>
+   <section class="mb-8 hidden" id="profile-section">
+    <h2 class="text-xl font-semibold mb-4 text-purple-600">
+     Your Profile
+    </h2>
+    <div class="bg-white p-6 rounded-lg shadow-md">
+     <div class="flex items-center mb-4">
+      <img alt="Profile picture of the user" class="w-16 h-16 object-cover rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/khGADzagpAhqTb_OS0-kJu2A4mybzEz-w8-O1D4kwlQ.jpg" width="100"/>
+      <div>
+       <h3 class="text-lg font-semibold text-blue-600">
+        Mansi Singh
+       </h3>
+       <p class="text-gray-600">
+        mansisingh@example.com
+       </p>
+      </div>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700" for="profile-name">
+       Name
+      </label>
+      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="profile-name" type="text" value="Mansi Singh"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700" for="profile-email">
+       Email
+      </label>
+      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="profile-email" type="email" value="mansisingh@example.com"/>
+     </div>
+     <div class="mb-4">
+      <label class="block text-gray-700" for="profile-resume">
+       Resume
+      </label>
+      <input class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" id="profile-resume" type="file"/>
+     </div>
+     <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 transition" type="submit">
+      Update Profile
+     </button>
+    </div>
+   </section>
+   <section class="mb-8 hidden" id="applied-jobs-section">
+    <h2 class="text-xl font-semibold mb-4 text-purple-600">
+     Your Applied Jobs
+    </h2>
+    <div class="bg-white p-4 rounded-lg shadow-md">
+     <div class="flex items-center mb-4">
+      <img alt="Company logo for applied job 1" class="w-16 h-16 object-cover rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/JrlMIt80ILgRir8XJIrikaa9vTwymN7DAV8Xmq13c3I.jpg" width="100"/>
+      <div>
+       <h3 class="text-lg font-semibold text-blue-600">
+        Frontend Developer
+       </h3>
+       <p class="text-gray-600">
+        Epicred
+       </p>
+       <p class="text-gray-600">
+        Status: Applied
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center mb-4">
+      <img alt="Company logo for applied job 2" class="w-16 h-16 object-cover rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/PXKjbREZ42yp8e9JD1KSssBOKsz9Eyn2KXfL4gzm8Ug.jpg" width="100"/>
+      <div>
+       <h3 class="text-lg font-semibold text-blue-600">
+        Backend Developer
+       </h3>
+       <p class="text-gray-600">
+        TechCorp
+       </p>
+       <p class="text-gray-600">
+        Status: Applied
+       </p>
+      </div>
+     </div>
+     <div class="flex items-center mb-4">
+      <img alt="Company logo for applied job 3" class="w-16 h-16 object-cover rounded-full mr-4" height="100" src="https://storage.googleapis.com/a1aa/image/ueylvpJjKEVkkZqePSzB_qlGixLARzm0ozjOkxSvL0c.jpg" width="100"/>
+      <div>
+       <h3 class="text-lg font-semibold text-blue-600">
+        Full Stack Developer
+       </h3>
+       <p class="text-gray-600">
+        Innovatech
+       </p>
+       <p class="text-gray-600">
+        Status: Applied
+       </p>
+      </div>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer class="bg-white shadow-md mt-8">
+   <div class="container mx-auto px-4 py-4 text-center">
+    <p class="text-gray-700">
+     © 2023 Job Application Hub. All rights reserved.
+    </p>
+   </div>
+  </footer>
+ </body>
+</html>
